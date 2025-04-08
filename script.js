@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-cadastro");
     const inputs = form.querySelectorAll("input");
 
-    // Restaurar os dados do localStorage
     const dadosSalvos = JSON.parse(localStorage.getItem("formCadastro"));
     if (dadosSalvos) {
         inputs.forEach(input => {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Salvar dados ao digitar
+
     inputs.forEach(input => {
         input.addEventListener("input", () => {
             const dados = {};
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Preenchimento automático com ViaCEP
+
     document.getElementById("cep").addEventListener("blur", (evento) => {
         const cep = evento.target.value.replace(/\D/g, "");
         if (cep.length !== 8) return;
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("cidade").value = data.localidade;
                     document.getElementById("estado").value = data.uf;
 
-                    // Atualiza o localStorage após preencher os campos automaticamente
                     const dados = {};
                     inputs.forEach(inp => {
                         dados[inp.id] = inp.value;
@@ -57,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("form-cadastro").reset();
     });
 
-    // Salvar ao submeter (opcional)
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Dados salvos com sucesso!");
