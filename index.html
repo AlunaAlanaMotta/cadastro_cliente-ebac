@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Cadastro de Usuário</h1>
+        <form id="form-cadastro">
+            <label>Nome:
+                <input type="text" name="nome" id="nome" >
+            </label>
+            <label>CEP:
+                <input type="text" name="cep" id="cep" required placeholder="Ex: 01001-000">
+            </label>
+            <label>Rua:
+                <input type="text" name="logradouro" id="logradouro" required>
+            </label>
+            <label>Bairro:
+                <input type="text" name="bairro" id="bairro" required>
+            </label>
+            <label>Cidade:
+                <input type="text" name="cidade" id="cidade" required>
+            </label>
+            <label>Estado:
+                <input type="text" name="estado" id="estado" required>
+            </label>
+            <button type="submit">Salvar</button>
+            <button type="button" id="limpar">Limpar</button>
+
+        </form>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
